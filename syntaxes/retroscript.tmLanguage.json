@@ -123,6 +123,88 @@
 									}
 								},
 								{
+									"match": "(\\G0[bB])([0-1](?:[0-1]|((?<=[0-1])'(?=[0-1])))*)((?<!')(\\+?)(\\-?)((?:[0-1](?:[0-1]|(?:(?<=[0-1])'(?=[0-1])))*)))?",
+									"captures": {
+										"1": {
+											"name": "keyword.other.unit.bit.retroscript"
+										},
+										"2": {
+											"name": "constant.numeric.bit.retroscript",
+											"patterns": [
+												{
+													"match": "(?<=[0-1])'(?=[0-1])",
+													"name": "punctuation.separator.constant.numeric"
+												}
+											]
+										},
+										"3": {
+											"name": "punctuation.separator.constant.numeric"
+										},
+										"5": {
+											"name": "keyword.other.unit.exponent.bit.retroscript"
+										},
+										"6": {
+											"name": "keyword.operator.plus.exponent.bit.retroscript"
+										},
+										"7": {
+											"name": "keyword.operator.minus.exponent.bit.retroscript"
+										},
+										"8": {
+											"name": "constant.numeric.exponent.bit.retroscript",
+											"patterns": [
+												{
+													"match": "(?<=[0-1])'(?=[0-1])",
+													"name": "punctuation.separator.constant.numeric"
+												}
+											]
+										},
+										"9": {
+											"name": "keyword.other.unit.suffix.integer.retroscript"
+										}
+									}
+								},
+								{
+									"match": "(\\G0[oO])([0-7](?:[0-7]|((?<=[0-7])'(?=[0-7])))*)((?<!')(\\+?)(\\-?)((?:[0-7](?:[0-7]|(?:(?<=[0-7])'(?=[0-7])))*)))?",
+									"captures": {
+										"1": {
+											"name": "keyword.other.unit.octal.retroscript"
+										},
+										"2": {
+											"name": "constant.numeric.octal.retroscript",
+											"patterns": [
+												{
+													"match": "(?<=[0-7])'(?=[0-7])",
+													"name": "punctuation.separator.constant.numeric"
+												}
+											]
+										},
+										"3": {
+											"name": "punctuation.separator.constant.numeric"
+										},
+										"5": {
+											"name": "keyword.other.unit.exponent.octal.retroscript"
+										},
+										"6": {
+											"name": "keyword.operator.plus.exponent.octal.retroscript"
+										},
+										"7": {
+											"name": "keyword.operator.minus.exponent.octal.retroscript"
+										},
+										"8": {
+											"name": "constant.numeric.exponent.octal.retroscript",
+											"patterns": [
+												{
+													"match": "(?<=[0-7])'(?=[0-7])",
+													"name": "punctuation.separator.constant.numeric"
+												}
+											]
+										},
+										"9": {
+											"name": "keyword.other.unit.suffix.integer.retroscript"
+										}
+									}
+								},
+								{
 									"match": "(\\G(?=[0-9.]))([0-9](?:[0-9])*)$",
 									"captures": {
 										"2": {
