@@ -28,9 +28,9 @@
 		{
 			"include": "#strings"
 		},
-        {
+		{
 			"include": "#preprocessor-rule-conditional"
-        },
+		},
 		{
 			"include": "#preprocessor-alias-definition"
 		},
@@ -49,10 +49,10 @@
 		{
 			"include": "#function-call"
 		},
-        {
-            "match": ",",
-            "name": "punctuation.separator.delimiter.retroscript"
-        }
+		{
+			"match": ",",
+			"name": "punctuation.separator.delimiter.retroscript"
+		}
 	],
 	"repository": {
 		"invalid-keywords": {
@@ -81,47 +81,47 @@
 							"begin": "(?=.)",
 							"end": "$",
 							"patterns": [
-                                {
+								{
 									"match": "(\\G0[xX])([0-9a-fA-F](?:[0-9a-fA-F]|((?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))*)((?<!')(\\+?)(\\-?)((?:[0-9](?:[0-9]|(?:(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])))*)))?",
-                                    "captures": {
-                                        "1": {
-                                            "name": "keyword.other.unit.hexadecimal.retroscript"
-                                        },
-                                        "2": {
-                                            "name": "constant.numeric.hexadecimal.retroscript",
-                                            "patterns": [
-                                                {
-                                                    "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                                                    "name": "punctuation.separator.constant.numeric"
-                                                }
-                                            ]
-                                        },
-                                        "3": {
-                                            "name": "punctuation.separator.constant.numeric"
-                                        },
-                                        "5": {
-                                            "name": "keyword.other.unit.exponent.hexadecimal.retroscript"
-                                        },
-                                        "6": {
-                                            "name": "keyword.operator.plus.exponent.hexadecimal.retroscript"
-                                        },
-                                        "7": {
-                                            "name": "keyword.operator.minus.exponent.hexadecimal.retroscript"
-                                        },
-                                        "8": {
-                                            "name": "constant.numeric.exponent.hexadecimal.retroscript",
-                                            "patterns": [
-                                                {
-                                                    "match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
-                                                    "name": "punctuation.separator.constant.numeric"
-                                                }
-                                            ]
-                                        },
-                                        "9": {
-                                            "name": "keyword.other.unit.suffix.integer.retroscript"
-                                        }
-                                    }
-                                },
+									"captures": {
+										"1": {
+											"name": "keyword.other.unit.hexadecimal.retroscript"
+										},
+										"2": {
+											"name": "constant.numeric.hexadecimal.retroscript",
+											"patterns": [
+												{
+													"match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
+													"name": "punctuation.separator.constant.numeric"
+												}
+											]
+										},
+										"3": {
+											"name": "punctuation.separator.constant.numeric"
+										},
+										"5": {
+											"name": "keyword.other.unit.exponent.hexadecimal.retroscript"
+										},
+										"6": {
+											"name": "keyword.operator.plus.exponent.hexadecimal.retroscript"
+										},
+										"7": {
+											"name": "keyword.operator.minus.exponent.hexadecimal.retroscript"
+										},
+										"8": {
+											"name": "constant.numeric.exponent.hexadecimal.retroscript",
+											"patterns": [
+												{
+													"match": "(?<=[0-9a-fA-F])'(?=[0-9a-fA-F])",
+													"name": "punctuation.separator.constant.numeric"
+												}
+											]
+										},
+										"9": {
+											"name": "keyword.other.unit.suffix.integer.retroscript"
+										}
+									}
+								},
 								{
 									"match": "(\\G(?=[0-9.]))([0-9](?:[0-9])*)$",
 									"captures": {
@@ -207,7 +207,7 @@
 					},
 					"patterns": [
 						{
-							"begin": "\\b(case)\\b",
+							"begin": "\\b(case|default)\\b",
 							"beginCaptures": {
 								"0": {
 									"name": "keyword.control.$1.retroscript"
@@ -221,7 +221,7 @@
 							},
 							"patterns": [
 								{
-									"match": "\\b(case)\\b",
+									"match": "\\b(case|default)\\b",
 									"captures": {
 										"0": {
 											"name": "keyword.control.$1.retroscript"
@@ -324,20 +324,20 @@
 				{
 					"begin": "^\\s*((\\w*)\\s*table)\\b\\s*(\\w*)",
 					"beginCaptures": {
-                        "1": {
-                            "name": "storage.type.table.definition.retroscript"
-                        },
-                        "2": {
+						"1": {
+							"name": "storage.type.table.definition.retroscript"
+						},
+						"2": {
 							"patterns": [
 								{
 									"include": "#definition-visibility"
 								}
 							],
-                            "name": "storage.type.table.visibility.retroscript"
-                        },
-                        "3": {
-                            "name": "entity.name.variable.table.retroscript"
-                        }
+							"name": "storage.type.table.visibility.retroscript"
+						},
+						"3": {
+							"name": "entity.name.variable.table.retroscript"
+						}
 					},
 					"end": "\\b(end\\s*table)\\b",
 					"endCaptures": {
@@ -418,28 +418,28 @@
 				{
 					"begin": "^\\s*((#)\\s*(platform\\b\\:))\\s*",
 					"beginCaptures": {
-                        "0": {
-                            "name": "meta.preprocessor.retroscript"
-                        },
-                        "1": {
-                            "name": "keyword.control.directive.conditional.retroscript"
-                        },
-                        "2": {
-                            "name": "punctuation.definition.directive.retroscript"
-                        }
+						"0": {
+							"name": "meta.preprocessor.retroscript"
+						},
+						"1": {
+							"name": "keyword.control.directive.conditional.retroscript"
+						},
+						"2": {
+							"name": "punctuation.definition.directive.retroscript"
+						}
 					},
-                    "end": "^\\s*((#)\\s*end\\s*platform\\b)",
-                    "endCaptures": {
-                        "0": {
-                            "name": "meta.preprocessor.retroscript"
-                        },
-                        "1": {
-                            "name": "keyword.control.directive.conditional.retroscript"
-                        },
-                        "2": {
-                            "name": "punctuation.definition.directive.retroscript"
-                        }
-                    },
+					"end": "^\\s*((#)\\s*end\\s*platform\\b)",
+					"endCaptures": {
+						"0": {
+							"name": "meta.preprocessor.retroscript"
+						},
+						"1": {
+							"name": "keyword.control.directive.conditional.retroscript"
+						},
+						"2": {
+							"name": "punctuation.definition.directive.retroscript"
+						}
+					},
 					"patterns": [
 						{
 							"match": "Standard|Mobile|SW_Rendering|HW_Rendering|Use_Haptics|No_Haptics|Use_Decomp|Use_Mod_Loader|STANDARD|MOBILE|SW_RENDERING|HW_RENDERING|USE_F_FEEDBACK|NO_F_FEEDBACK|USE_DECOMP|USE_NETWORKING|USE_MOD_LOADER",
@@ -450,14 +450,14 @@
 						}
 					]
 				},
-                {
-                    "match": "^\\s*#\\s*(end\\s*platform)\\b",
-                    "captures": {
-                        "0": {
-                            "name": "invalid.illegal.stray-$1.retroscript"
-                        }
-                    }
-                }
+				{
+					"match": "^\\s*#\\s*(end\\s*platform)\\b",
+					"captures": {
+						"0": {
+							"name": "invalid.illegal.stray-$1.retroscript"
+						}
+					}
+				}
 			]
 		},
 		"preprocessor-alias-definition": {
@@ -465,15 +465,15 @@
 				{
 					"match": "^\\s*((#)\\s*(alias))\\b\\s*",
 					"captures": {
-                        "0": {
-                            "name": "meta.preprocessor.retroscript"
-                        },
-                        "1": {
-                            "name": "keyword.control.directive.alias.retroscript"
-                        },
-                        "2": {
-                            "name": "punctuation.definition.directive.alias.retroscript"
-                        }
+						"0": {
+							"name": "meta.preprocessor.retroscript"
+						},
+						"1": {
+							"name": "keyword.control.directive.alias.retroscript"
+						},
+						"2": {
+							"name": "punctuation.definition.directive.alias.retroscript"
+						}
 					},
 					"patterns": [ ]
 				}
@@ -484,18 +484,18 @@
 				{
 					"match": "^\\s*((#)\\s*(function))\\b\\s*(\\w*)",
 					"captures": {
-                        "0": {
-                            "name": "meta.preprocessor.retroscript"
-                        },
-                        "1": {
-                            "name": "keyword.control.directive.function.retroscript"
-                        },
-                        "3": {
-                            "name": "punctuation.definition.directive.function.retroscript"
-                        },
-                        "4": {
-                            "name": "entity.name.function.definition.retroscript"
-                        }
+						"0": {
+							"name": "meta.preprocessor.retroscript"
+						},
+						"1": {
+							"name": "keyword.control.directive.function.retroscript"
+						},
+						"3": {
+							"name": "punctuation.definition.directive.function.retroscript"
+						},
+						"4": {
+							"name": "entity.name.function.definition.retroscript"
+						}
 					},
 					"patterns": [ ]
 				}
@@ -506,12 +506,12 @@
 				{
 					"match": "^\\s*(reserve\\s*function)\\b\\s*(\\w*)",
 					"captures": {
-                        "1": {
-                            "name": "storage.type.function.definition.retroscript"
-                        },
-                        "2": {
-                            "name": "entity.name.function.definition.retroscript"
-                        }
+						"1": {
+							"name": "storage.type.function.definition.retroscript"
+						},
+						"2": {
+							"name": "entity.name.function.definition.retroscript"
+						}
 					},
 					"patterns": [ ]
 				}
@@ -522,27 +522,27 @@
 				{
 					"match": "^\\s*((\\w*)\\s*value)\\b\\s*(\\w*)\\s*\\=\\s*([0-9a-zA-Z_\\.\\-]*)",
 					"captures": {
-                        "1": {
-                            "name": "storage.type.static.definition.retroscript"
-                        },
-                        "2": {
+						"1": {
+							"name": "storage.type.static.definition.retroscript"
+						},
+						"2": {
 							"patterns": [
 								{
 									"include": "#definition-visibility"
 								}
 							],
-                            "name": "storage.type.static.visibility.retroscript"
-                        },
-                        "3": {
-                            "name": "entity.name.variable.static.retroscript"
-                        },
-                        "4": {
-                            "patterns": [
+							"name": "storage.type.static.visibility.retroscript"
+						},
+						"3": {
+							"name": "entity.name.variable.static.retroscript"
+						},
+						"4": {
+							"patterns": [
 								{
 									"include": "#numbers"
 								}
 							]
-                        }
+						}
 					}
 				}
 			]
@@ -552,35 +552,35 @@
 				{
 					"match": "^\\s*((\\w*)\\s*alias)\\b\\s*([0-9a-zA-Z_\\.\\-]*)\\s*(\\:)\\s*([0-9a-zA-Z_\\.]*)",
 					"captures": {
-                        "1": {
-                            "name": "storage.type.alias.definition.retroscript"
-                        },
-                        "2": {
+						"1": {
+							"name": "storage.type.alias.definition.retroscript"
+						},
+						"2": {
 							"patterns": [
 								{
 									"include": "#definition-visibility"
 								}
 							],
-                            "name": "storage.type.alias.visibility.retroscript"
-                        },
-                        "3": {
+							"name": "storage.type.alias.visibility.retroscript"
+						},
+						"3": {
 							"patterns": [
 								{
 									"include": "#numbers"
 								}
 							]
-                        },
-                        "4": {
+						},
+						"4": {
 							"name": "punctuation.separator.colon.retroscript"
-                        },
-                        "5": {
+						},
+						"5": {
 							"patterns": [
 								{
 									"match": "[\\w\\.]*",
 									"name": "entity.name.type.constant.retroscript"
 								}
 							]
-                        }
+						}
 					}
 				}
 			]
@@ -589,78 +589,78 @@
 			"match": "^(private|public)$",
 			"name": "storage.type.visibility.retroscript"
 		},
-    	"function-call": {
-            "begin": "(?x)\n(?!(?:if|else|end\\s*if|while|loop|foreach|next|switch|case|default|break|end\\s*switch|function|end\\s*function|sub|end\\s*sub|event|end\\s*event)\\s*\\()\n(?=\n(?:[A-Za-z0-9_][A-Za-z0-9_]*+|::)++\\s*\\(  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(\n)",
-            "end": "(?<=\\))(?!\\w)",
-            "name": "meta.function-call.retroscript",
-            "patterns": [
-                {
-                    "include": "#function-call-innards"
-                }
-            ]
-        },
-    	"function-call-innards": {
-            "patterns": [
-                {
-                    "include": "#comments"
-                },
-                {
-                    "include": "#strings"
-                },
-                {
-                    "include": "#numbers"
-                },
-                {
-                    "include": "#keywords"
-                },
-                {
-                    "include": "#operators"
-                },
+		"function-call": {
+			"begin": "(?x)\n(?!(?:if|else|end\\s*if|while|loop|foreach|next|switch|case|default|break|end\\s*switch|function|end\\s*function|sub|end\\s*sub|event|end\\s*event)\\s*\\()\n(?=\n(?:[A-Za-z0-9_][A-Za-z0-9_]*+|::)++\\s*\\(  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(\n)",
+			"end": "(?<=\\))(?!\\w)",
+			"name": "meta.function-call.retroscript",
+			"patterns": [
+				{
+					"include": "#function-call-innards"
+				}
+			]
+		},
+		"function-call-innards": {
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#operators"
+				},
 				{
 					"include": "#typename-entity"
 				},
-                {
-                    "begin": "(?x)\n(?!(?:if|else|end\\s*if|while|loop|foreach|next|switch|case|default|break|end\\s*switch|end\\s*table|function|end\\s*function|sub|end\\s*sub|event|end\\s*event)\\s*\\()\n(\n(?:[A-Za-z0-9_][A-Za-z0-9_]*+|::)++  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\n)\n\\s*(\\()",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "entity.name.function.retroscript"
-                        },
-                        "2": {
-                            "name": "punctuation.section.arguments.begin.bracket.round.retroscript"
-                        }
-                    },
-                    "end": "\\)",
-                    "endCaptures": {
-                        "0": {
-                            "name": "punctuation.section.arguments.end.bracket.round.retroscript"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "include": "#function-call-innards"
-                        }
-                    ]
-                },
-                {
-                    "begin": "\\(",
-                    "beginCaptures": {
-                        "0": {
-                            "name": "punctuation.section.parens.begin.bracket.round.retroscript"
-                        }
-                    },
-                    "end": "\\)",
-                    "endCaptures": {
-                        "0": {
-                            "name": "punctuation.section.parens.end.bracket.round.retroscript"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "include": "#function-call-innards"
-                        }
-                    ]
-                }
-            ]
-        }
+				{
+					"begin": "(?x)\n(?!(?:if|else|end\\s*if|while|loop|foreach|next|switch|case|default|break|end\\s*switch|end\\s*table|function|end\\s*function|sub|end\\s*sub|event|end\\s*event)\\s*\\()\n(\n(?:[A-Za-z0-9_][A-Za-z0-9_]*+|::)++  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\n)\n\\s*(\\()",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.function.retroscript"
+						},
+						"2": {
+							"name": "punctuation.section.arguments.begin.bracket.round.retroscript"
+						}
+					},
+					"end": "\\)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.arguments.end.bracket.round.retroscript"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#function-call-innards"
+						}
+					]
+				},
+				{
+					"begin": "\\(",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.section.parens.begin.bracket.round.retroscript"
+						}
+					},
+					"end": "\\)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.parens.end.bracket.round.retroscript"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#function-call-innards"
+						}
+					]
+				}
+			]
+		}
 	}
 }
