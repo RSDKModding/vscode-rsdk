@@ -229,7 +229,7 @@
 			}
 		},
 		"typename-entity": {
-			"match": "(TypeName|SfxName|AchievementName|PlayerName|StageName)\\s*(\\[)\\s*([\\w\\s]*)\\s*(\\])",
+			"match": "(TypeName|SfxName|VarName|AchievementName|PlayerName|StageName)\\s*(\\[)\\s*([\\w\\s]*)\\s*(\\])",
 			"captures": {
 				"1": {
 					"name": "storage.type.typename.retroscript"
@@ -438,10 +438,21 @@
 		"declaration": {
 			"patterns": [
 				{
-					"begin": "\\b(function)\\b",
+					"begin": "^\\s*((\\w*)\\s*function)\\b\\s*(\\w*)",
 					"beginCaptures": {
-						"0": {
-							"name": "storage.type.$1.retroscript"
+						"1": {
+							"name": "storage.type.function.definition.retroscript"
+						},
+						"2": {
+							"patterns": [
+								{
+									"include": "#definition-visibility"
+								}
+							],
+							"name": "storage.type.function.visibility.retroscript"
+						},
+						"3": {
+							"name": "entity.name.variable.table.retroscript"
 						}
 					},
 					"end": "\\b(end\\s*function)\\b",
@@ -524,7 +535,7 @@
 					},
 					"patterns": [
 						{
-							"match": "Standard|Mobile|SW_Rendering|HW_Rendering|Use_Haptics|No_Haptics|Use_Decomp|Use_Mod_Loader|STANDARD|MOBILE|SW_RENDERING|HW_RENDERING|USE_F_FEEDBACK|NO_F_FEEDBACK|USE_DECOMP|USE_NETWORKING|USE_MOD_LOADER",
+							"match": "Standard|Mobile|SW_Rendering|HW_Rendering|Use_Haptics|No_Haptics|Use_Decomp|Use_Mod_Loader|Use_Standalone|Use_Origins|STANDARD|MOBILE|SW_RENDERING|HW_RENDERING|USE_F_FEEDBACK|NO_F_FEEDBACK|USE_DECOMP|USE_NETWORKING|USE_MOD_LOADER|USE_STANDALONE|USE_ORIGINS",
 							"name": "entity.name.function.preprocessor.retroscript"
 						},
 						{
