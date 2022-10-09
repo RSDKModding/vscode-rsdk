@@ -1,10 +1,10 @@
 {
-	"name": "rsdk-script",
-	"displayName": "RSDK Script",
-	"description": "RSDK script syntax highlighting",
-	"version": "0.4.1",
-	"publisher": "xeeynamo",
-	"repository": "https://github.com/xeeynamo/vscode-rsdk",
+	"name": "RetroScript",
+	"displayName": "RetroScript",
+	"description": "RetroScript syntax highlighting",
+	"version": "0.5.0",
+	"publisher": "xeeynamo & rubberduckycooly",
+	"repository": "https://github.com/rubberduckycooly/vscode-rsdk",
 	"license": "Apache-2.0",
 	"icon": "icon.png",
 	"engines": {
@@ -26,10 +26,11 @@
 	"contributes": {
 		"languages": [
 			{
-				"id": "rsdk",
+				"id": "retroscript",
 				"aliases": [
 					"RSDK",
-					"rsdk"
+					"rsdk",
+					"RetroScript"
 				],
 				"extensions": [
 					".txt",
@@ -40,9 +41,9 @@
 		],
 		"grammars": [
 			{
-				"language": "rsdk",
-				"scopeName": "source.rsdk",
-				"path": "./syntaxes/rsdk.tmLanguage.json"
+				"language": "retroscript",
+				"scopeName": "source.retroscript",
+				"path": "./syntaxes/retroscript.tmLanguage.json"
 			}
 		],
 
@@ -52,10 +53,5 @@
 				"path": "./rsdk-snippets.json"
 			}
 		]
-	},
-	"__metadata": {
-		"id": "f7a98b07-3e37-45f4-9f8d-9cc4e5e0f38b",
-		"publisherDisplayName": "Luciano (Xeeynamo) Ciccariello",
-		"publisherId": "9bdae957-ffdd-4149-990a-c2b6ead84894"
 	}
 }
