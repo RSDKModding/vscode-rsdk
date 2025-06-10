@@ -6,15 +6,24 @@
 			"// Script Name: $TM_FILENAME_BASE",
 			"// Script Author: ${4:Script Author}",
 			"",
+			"// ========================",
 			"// Aliases",
-			"",
-			"// States",
-			"",
-			"// Custom Aliases",
+			"// ========================",
 			"",
 			"",
-			"// Function declarations",
+			"// ========================",
+			"// Function Declarations",
+			"// ========================",
 			"",
+			"",
+			"// ========================",
+			"// Function Definitions",
+			"// ========================",
+			"",
+			"",
+			"// ========================",
+			"// Subs",
+			"// ========================",
 			"",
 			"sub ObjectMain",
 			"\t$0",
@@ -49,9 +58,10 @@
 			"\tSpriteFrame(-16, -16, 32, 32, 1, 143)\t\t// #0 - \"Script\" Icon",
 			"\t",
 			"\tSetVariableAlias(ALIAS_VAR_PROPVAL, \"unused\")",
-			"end sub"
+			"end sub",
+			""
 		],
-		"description": "Set basic format for a v3 script"
+		"description": "Add a basic template for a v3 script"
 	},
 
 	"Setup v4 Script":{
@@ -65,18 +75,14 @@
 			"// Aliases",
 			"// ========================",
 			"",
-			"// States",
 			"",
-			"// Custom Aliases",
+			"// ========================",
+			"// Static Values",
+			"// ========================",
 			"",
 			"",
 			"// ========================",
 			"// Function Declarations",
-			"// ========================",
-			"",
-			"",
-			"// ========================",
-			"// Static Values",
 			"// ========================",
 			"",
 			"",
@@ -110,63 +116,63 @@
 			"",
 			"",
 			"// ========================",
-			"// Editor Events",
+			"// Editor Subs",
 			"// ========================",
 			"",
 			"event RSDKDraw",
 			"\tDrawSprite(0)",
 			"end event",
 			"",
+			"",
 			"event RSDKLoad",
 			"\tLoadSpriteSheet(\"Global/Display.gif\")",
 			"\tSpriteFrame(-16, -16, 32, 32, 1, 143)\t\t// #0 - \"Script\" Icon",
 			"\t",
 			"\tSetVariableAlias(ALIAS_VAR_PROPVAL, \"unused\")",
-			"end event"
+			"end event",
+			""
 		],
-		"description": "Set basic format for a v4 script"
+		"description": "Add a basic template for a v4 script"
 	},
 
-	"v3 Sub Events": {
-		"prefix": "(v3) sub Event",
+	"v3 Subs": {
+		"prefix": "(v3) Sub",
 		"body": [
 			"sub ${3|ObjectMain,ObjectDraw,ObjectPlayerInteraction,ObjectStartup|}",
 			"\t$0",
 			"end sub"
 		],
 		"description": [
-		"ObjectMain - Calls once every frame per object",
-		"\rif priority allows for it\n",
-		"ObjectDraw - Calls once every frame per object",
+		"ObjectMain - Called once every frame per object to update,",
+		"\rif priority allows for it.\n",
+		"ObjectDraw - Called once every frame per object to draw,",
 		"\rif priority allows for it. The order is based",
-		"\ron the value of Object.DrawOrder\n",
-		"ObjectPlayerInteraction - Calls once every frame per object",
+		"\ron the value of Object.DrawOrder.\n",
+		"ObjectPlayerInteraction - Called once every frame per object,",
 		"\rif priority allows for it",
-		"\rand Player.ObjectInteractions is enabled\n",
-		"ObjectStartup - Calls once per object type",
-		"\rwhen the stage loads.",
+		"\rand Player.ObjectInteractions is enabled.\n",
+		"ObjectStartup - Called once per object type on stage startup.",
 		"\rUsed for loading sheets, SpriteFrames",
-		"\rand change behaviour based on property"
+		"\rand settings values based on property values."
 		]
 	},
 
 	"v4 Events": {
-		"prefix": "(v4) Events",
+		"prefix": "(v4) Event",
 		"body": [
 			"event ${3|ObjectUpdate,ObjectDraw,ObjectStartup|}",
 			"\t$0",
 			"end event"
 		],
 		"description": [
-		"ObjectUpdate - Calls once every frame per object",
-		"\rif priority allows for it\n",
-		"ObjectDraw - Calls once every frame per object",
+		"ObjectUpdate - Called once every frame per object to update,",
+		"\rif priority allows for it.\n",
+		"ObjectDraw - Called once every frame per object to draw,",
 		"\rif priority allows for it. The order is based",
-		"\ron the value of Object.DrawOrder\n",
-		"ObjectStartup - Calls once per object type",
-		"\rwhen the stage loads.",
+		"\ron the value of object.drawOrder.\n",
+		"ObjectStartup - Called once per object type on stage startup.",
 		"\rUsed for loading sheets, SpriteFrames",
-		"\rand change behaviour based on property"
+		"\rand settings values based on property values."
 		]
 	},
 
@@ -197,7 +203,7 @@
 			"#alias 4097 : CALLBACK_SET1P",
 			"#alias 4098 : CALLBACK_SET2P\n"
 		],
-		"description": "Add alias in script of the most used engine states\n\rplus SET1P and 2P, which helps adding an AI player"
+		"description": "Add aliases for the most used engine states\n\rplus SET1P and 2P, which help for adding an AI player."
 	},
 
 	"Add v3 tileinfo aliases":{
@@ -214,7 +220,7 @@
 			"#alias 7 : TILEINFO_FLAGSB",
 			"#alias 8 : TILEINFO_ANGLEB\n"
 		],
-		"description": "Add alias in script for usage in TileInfo funcs\n\rFLAGSB and ANGLEB are read-only"
+		"description": "Add aliases for usage in TileInfo functions.\n\rFLAGSB and ANGLEB are read-only."
 	},
 
 	"Add v3 face flag aliases":{
