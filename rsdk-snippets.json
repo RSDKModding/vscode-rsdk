@@ -310,6 +310,17 @@
 		],
 		"description": "Add alias in script for camera styles"
 	},
+	
+	"Add v3 Entity Collision Aliases":{
+		"prefix": "(v3) Entity Collision Aliases",
+		"body": [
+			"// Entity Collision Effects",
+			"#alias 0	:	ECEFFECT_NONE",
+			"#alias 1	:	ECEFFECT_RESETSTORAGE",
+			"#alias 2	:	ECEFFECT_BOXCOL3\n"
+		],
+		"description": "Add alias in script for Entity Collision"
+	},
 
 	"Add v4 tile info aliases":{
 		"prefix": "(v4) Tileinfo aliases",
@@ -328,6 +339,30 @@
 		"description": "Add alias in script for usage in TileInfo funcs\n\rFLAGSB and ANGLEB are read-only"
 	},
 	
+	"Add TextInfo Aliases":{
+		"prefix": "TextInfo aliases",
+		"body": [
+			"// TextInfo aliases",
+			"private alias 0 : TEXTINFO_TEXTDATA",
+			"private alias 1 : TEXTINFO_TEXTSIZE",
+			"private alias 2 : TEXTINFO_ROWCOUNT\n"
+		],
+		"description": "Add alias in script for usage of TextInfo"
+	},
+
+	"Add v4 TileLayer Aliases":{
+		"prefix": "(v4) TileLayer aliases",
+		"body": [
+			"// TextInfo aliases",
+			"private alias 0 : TILELAYER_NOSCROLL",
+			"private alias 1 : TILELAYER_HSCROLL",
+			"private alias 2 : TILELAYER_VSCROLL",
+			"private alias 3 : TILELAYER_3DFLOOR",
+			"private alias 4 : TILELAYER_3DSKY\n"
+		],
+		"description": "Add alias in script for usage in TileLayer funcs"
+	},
+
 	"Add v4 face flag aliases":{
 		"prefix": "(v4) Face aliases",
 		"body": [
@@ -423,7 +458,7 @@
 			"private alias 7 : ENGINE_ENDGAME",
 			"private alias 8 : ENGINE_RESETGAME\n"
 		],
-		"description": "Add alias in script for usage with object.direction"
+		"description": "Add alias in script for usage with engine.state"
 	},
 
 	"Add v4 collision aliases":{
@@ -1243,7 +1278,19 @@
 		"body": "Cos256(${4:int store}, ${5:int angle})\n",
 		"description": "Gets the value from cos256\n\rlookup table based on angle and sets it in store"
 	},
-
+	
+	"SinChange":{
+		"prefix": "v3 SinChange-MathFunc",
+		"body": "SinChange(${4:int store}, ${5:int angle}, ${6:int rshift}, ${7:int inc}, ${8:int dec})\n",
+		"description": "Sin, but you can right shift, increase and decrease the stored result"
+	},
+	
+	"CosChange":{
+		"prefix": "v3 CosChange-MathFunc",
+		"body": "CosChange(${4:int store}, ${5:int angle}, ${6:int rshift}, ${7:int inc}, ${8:int dec})\n",
+		"description": "Cos, but you can right shift, increase and decrease the stored result"
+	},
+	
 	"Arctangent":{
 		"prefix": "ATan2-MathFunc",
 		"body": "ATan2(${3:int store}, ${4:int x}, ${5:int y})\n",
