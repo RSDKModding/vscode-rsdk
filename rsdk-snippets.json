@@ -378,6 +378,19 @@
 		],
 		"description": "Add alias in script for usage in TileInfo funcs\n\rFLAGSB and ANGLEB are read-only"
 	},
+
+	"setup editor.showGizmos":{
+		"prefix": "(Editor) setup editor.showGizmos ",
+		"body": [
+			"if editor.showGizmos == true",
+			"\teditor.drawingOverlay = true",
+			"\t",
+			"\t",
+			"\teditor.drawingOverlay = false",
+			"end if\n"
+		],
+		"description": "Sets up showGizmos for drawing lines, arrows and other extra information"
+	},
 	
 	"Add TextInfo Aliases":{
 		"prefix": "TextInfo aliases",
@@ -1600,6 +1613,82 @@
 		"description": [
 			"prints a message to log, the message can be a string or a regular value",
 			"depending of isInt"
+		]
+	},
+
+	"Add Editor Variable":{
+		"prefix": "(Editor) Add Editor Variable",
+		"body": "DrawLine(${3:int XPos}, ${4:int YPos}, ${5:int endXPos}, ${6:int endYPos}, ${7:int Red}, ${8:int Green}, ${9:int Blue})\n",
+		"description": [
+			"TODO: add a description"
+		]
+	},
+
+	"Set Active Variable":{
+		"prefix": "(Editor) Set Active Variable",
+		"body": "DrawLine(${3:int XPos}, ${4:int YPos}, ${5:int endXPos}, ${6:int endYPos}, ${7:int Red}, ${8:int Green}, ${9:int Blue})\n",
+		"description": [
+			"TODO: add a description"
+		]
+	},
+
+	"Add Enum Variable":{
+		"prefix": "(Editor) Add Enum Variable",
+		"body": "DrawLine(${3:int XPos}, ${4:int YPos}, ${5:int endXPos}, ${6:int endYPos}, ${7:int Red}, ${8:int Green}, ${9:int Blue})\n",
+		"description": [
+			"TODO: add a description"
+		]
+	},
+
+	"Set Variable Alias":{
+		"prefix": "(Editor) Set Variable Alias",
+		"body": "SetVariableAlias(${3|ALIAS_VAR_PROPVAL,ALIAS_VAR_VAL0,ALIAS_VAR_VAL1,ALIAS_VAR_VAL2,ALIAS_VAR_VAL3|}, ${4:\"\"})\n",
+		"description": [
+			"TODO: add a description"
+		]
+	},
+
+	"Draw Line":{
+		"prefix": "(Editor) Draw Line",
+		"body": "DrawLine(${3:int XPos}, ${4:int YPos}, ${5:int endXPos}, ${6:int endYPos}, ${7:int Red}, ${8:int Green}, ${9:int Blue})\n",
+		"description": [
+			"Draws a line from Objects Pos to endPos",
+			"\rwith a color of Red, Green, Blue"
+		]
+	},
+
+	"Draw Arrow":{
+		"prefix": "(Editor) Draw Arrow",
+		"body": "DrawArrow(${3:int XPos}, ${4:int YPos}, ${5:int endXPos}, ${6:int endYPos}, ${7:int Red}, ${8:int Green}, ${9:int Blue})\n",
+		"description": [
+			"Draws a Arrow from Objects Pos to endPos",
+			"\rwith a color of Red, Green, Blue"
+		]
+	},
+
+	"Draw Rect World":{
+		"prefix": "(Editor) Draw Rect World",
+		"body": "DrawRectWorld(${3:int iXPos}, ${4:int iYPos}, ${5:int width}, ${6:int height}, ${7:int Red}, ${8:int Green}, ${9:int Blue}, ${10:int Alpha})\n",
+		"description": [
+			"Draws a rectangle with a size of width,height\nat ixPos and iYPos,",
+			"\rwith a color of Red, Green, Blue along Alpha"
+		]
+	},
+
+	"Draw Rect Outline":{
+		"prefix": "(Editor) Draw Rect Outline",
+		"body": "DrawRectOutline(${3:int iXPos}, ${4:int iYPos}, ${5:int width}, ${6:int height}, ${7:int Red}, ${8:int Green}, ${9:int Blue}, ${10:int Alpha})\n",
+		"description": [
+			"Draws a Outline rectangle with a size of width,height\nat ixPos and iYPos,",
+			"\rwith a color of Red, Green, Blue along Alpha"
+		]
+	},
+
+	"Get Object Type":{
+		"prefix": "(Editor) Get Object Type",
+		"body": "GetObjectType(${3:int store}, ${4:\"typeName\"})\n",
+		"description": [
+			"TODO: add a description"
 		]
 	}
 }
