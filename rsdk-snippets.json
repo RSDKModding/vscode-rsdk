@@ -1,10 +1,72 @@
 {
+	"Setup v2 Script":{
+		"prefix": "v2 Setup",
+		"body": [
+			"// ========================",
+			"// RSDK Project ${3|Sonic Nexus,Custom v2 Project|}",
+			"// Script Name: $TM_FILENAME_BASE",
+			"// Script Author: ${4:Script Author}",
+			"// ========================",
+			"",
+			"// ========================",
+			"// Aliases",
+			"// ========================",
+			"",
+			"",
+			"// ========================",
+			"// Function Declarations",
+			"// ========================",
+			"",
+			"",
+			"// ========================",
+			"// Function Definitions",
+			"// ========================",
+			"",
+			"",
+			"// ========================",
+			"// Subs",
+			"// ========================",
+			"",
+			"sub ObjectMain",
+			"\t$0",
+			"end sub",
+			"",
+			"",
+			"sub ObjectPlayerInteraction",
+			"",
+			"end sub",
+			"",
+			"",
+			"sub ObjectDraw",
+			"",
+			"end sub",
+			"",
+			"",
+			"sub ObjectStartup",
+			"",
+			"end sub",
+			"",
+			"",
+			"// ========================",
+			"// RSDK Sub",
+			"// ========================",
+			"",
+			"sub RSDK",
+			"\tLoadSpriteSheet(\"NexusGlobals/Display.gif\")",
+			"\tSetEditorIcon(Icon0,SingleIcon,-15,-15,30,30,193,347)",
+			"end sub",
+			""
+		],
+		"description": "Add a basic template for a v2 script"
+	},
 	"Setup v3 Script":{
 		"prefix": "v3 Setup",
 		"body": [
+			"// ========================",
 			"// RSDK Project ${3|Sonic CD,Custom v3 Project|}",
 			"// Script Name: $TM_FILENAME_BASE",
 			"// Script Author: ${4:Script Author}",
+			"// ========================",
 			"",
 			"// ========================",
 			"// Aliases",
@@ -49,9 +111,27 @@
 			"// Editor Subs",
 			"// ========================",
 			"",
+			"sub RSDKEdit",
+			"\tif editor.returnVariable == true",
+			"\t\tswitch editor.variableID",
+			"\t\tcase EDIT_VAR_PROPVAL\t// property value",
+			"\t\t\tcheckResult = object.propertyValue",
+			"\t\t\tbreak",
+			"\t\tend switch",
+			"\telse",
+			"\t\tswitch editor.variableID",
+			"\t\tcase EDIT_VAR_PROPVAL\t// property value",
+			"\t\t\tobject.propertyValue = editor.variableValue",
+			"\t\t\tbreak",
+			"\t\tend switch",
+			"\tend if",
+			"end sub",
+			"",
+			"",
 			"sub RSDKDraw",
 			"\tDrawSprite(0)",
 			"end sub",
+			"",
 			"",
 			"sub RSDKLoad",
 			"\tLoadSpriteSheet(\"Global/Display.gif\")",
@@ -67,9 +147,11 @@
 	"Setup v4 Script":{
 		"prefix": "v4 Setup",
 		"body": [
+			"// ========================",
 			"// ${3|Sonic 1,Sonic 2,Custom v4 Project|}",
 			"// Script Name: $TM_FILENAME_BASE",
 			"// Script Author: ${4:Script Author}",
+			"// ========================",
 			"",
 			"// ========================",
 			"// Aliases",
@@ -118,6 +200,23 @@
 			"// ========================",
 			"// Editor Subs",
 			"// ========================",
+			"",
+			"event RSDKEdit",
+			"\tif editor.returnVariable == true",
+			"\t\tswitch editor.variableID",
+			"\t\tcase EDIT_VAR_PROPVAL\t// property value",
+			"\t\t\tcheckResult = object.propertyValue",
+			"\t\t\tbreak",
+			"\t\tend switch",
+			"\telse",
+			"\t\tswitch editor.variableID",
+			"\t\tcase EDIT_VAR_PROPVAL\t// property value",
+			"\t\t\tobject.propertyValue = editor.variableValue",
+			"\t\t\tbreak",
+			"\t\tend switch",
+			"\tend if",
+			"end event",
+			"",
 			"",
 			"event RSDKDraw",
 			"\tDrawSprite(0)",
@@ -316,14 +415,14 @@
 		],
 		"description": "Add alias in script for camera styles"
 	},
-	
+
 	"Add v3 Entity Collision Aliases":{
 		"prefix": "(v3) Entity Collision Aliases",
 		"body": [
 			"// Entity Collision Effects",
-			"#alias 0	:	ECEFFECT_NONE",
-			"#alias 1	:	ECEFFECT_RESETSTORAGE",
-			"#alias 2	:	ECEFFECT_BOXCOL3\n"
+			"#alias  0 : ECEFFECT_NONE",
+			"#alias  1 : ECEFFECT_RESETSTORAGE",
+			"#alias  2 : ECEFFECT_BOXCOL3"
 		],
 		"description": "Add alias in script for Entity Collision"
 	},
@@ -343,6 +442,19 @@
 			"private alias 8 : TILEINFO_ANGLEB\n"
 		],
 		"description": "Add alias in script for usage in TileInfo funcs\n\rFLAGSB and ANGLEB are read-only"
+	},
+
+	"setup editor.showGizmos":{
+		"prefix": "(Editor) setup editor.showGizmos ",
+		"body": [
+			"if editor.showGizmos == true",
+			"\teditor.drawingOverlay = true",
+			"\t",
+			"\t",
+			"\teditor.drawingOverlay = false",
+			"end if\n"
+		],
+		"description": "Sets up showGizmos for drawing lines arrows and other extra information"
 	},
 	
 	"Add TextInfo Aliases":{
@@ -521,7 +633,7 @@
 	"v3 Platform Types":{
 		"prefix": "(v3) #Platform",
 		"body": [
-			"#platform: ${3|Standard,Mobile,Use_Standalone,Use_Origins,SW_Renderer,HW_Renderer,Use_Haptics,No_Haptics,Use_Decomp|}",
+			"#platform: ${3|Standard,Mobile,Use_Standalone,Use_Origins,SW_Rendering,HW_Rendering,Use_Haptics,No_Haptics,Use_Decomp|}",
 			"\t$0",
 			"#endplatform\n"
 			],
@@ -940,15 +1052,26 @@
 		]
 	},
 
-	"Rotate Palette":{
-		"prefix": "Rotate Palette",
-		"body": "RotatePalette(${3:int palBankID}, ${4:int startIndex}, ${5:int endIndex}, ${6:int rotationDirection})\n",
+	"v3 Rotate Palette":{
+		"prefix": "(v3) Rotate Palette",
+		"body": "RotatePalette(${3:int startIndex}, ${4:int endIndex}, ${5:bool rotRight})\n",
 		"description": [
-			"Rotates all colours in the palette bank",
 			"starting from startIndex through to endIndex,",
 			"it will move left if rotationDirection is 0",
 			"otherwise it will move right",
 			"HW Renderer cannot use this function"
+		]
+	},
+
+
+	"v4 Rotate Palette":{
+		"prefix": "(v4) Rotate Palette",
+		"body": "RotatePalette(${3:int palBankID}, ${4:int startIndex}, ${5:int endIndex}, ${6:bool rotRight})\n",
+		"description": [
+			"Rotates all colours in the palette bank",
+			"starting from startIndex through to endIndex,",
+			"it will move left if rotationDirection is 0",
+			"otherwise it will move right"
 		]
 	},
 
@@ -989,8 +1112,8 @@
 		]
 	},
 
-	"Set Palette Fade":{
-		"prefix": "Set Palette Fade",
+	"v3 Set Palette Fade":{
+		"prefix": "(v3) Set Palette Fade",
 		"body": "SetPaletteFade(${3:int destPalBankID}, ${4:int Red}, ${5:int Green}, ${6:int Blue}, ${7:int blendAmount}, ${8:int startIndex}, ${9:int endIndex})\n",
 		"description": [
 			"Blends the currently active palette with",
@@ -998,6 +1121,19 @@
 			"\rand stores it in destPalBankID,",
 			"\rstarting at palIndex and",
 			"\rcontinuing through to endIndex"
+		]
+	},
+
+	"v4 Set Palette Fade":{
+		"prefix": "(v4) Set Palette Fade",
+		"body": "SetPaletteFade(${3:int dstBank}, ${4:int srcBankA}, ${5:int srcBankB}, ${6:int blendAmount}, ${7:int startIndex}, ${8:int endIndex})\n",
+		"description": [
+			"dstBank -The ID of the palette for store. Indices 0-7 are valid.",
+			"\rsrcBankA -The first palette to blend.",
+			"\rsrcBankB - The second palette to blend.",
+			"\rblendAmount - A value range of 0-255 for blending.",
+			"\rstartIndex - The starting index of the palette bank to blend.",
+			"\rendIndex - The ending index of the palette bank to blend."
 		]
 	},
 
@@ -1566,6 +1702,82 @@
 		"description": [
 			"prints a message to log, the message can be a string or a regular value",
 			"depending of isInt"
+		]
+	},
+
+	"Add Editor Variable":{
+		"prefix": "(Editor) Add Editor Variable",
+		"body": "AddEditorVariable(${3:\"\"})\n",
+		"description": [
+			"TODO: add a description"
+		]
+	},
+
+	"Set Active Variable":{
+		"prefix": "(Editor) Set Active Variable",
+		"body": "SetActiveVariable(${3:\"\"})\n",
+		"description": [
+			"TODO: add a description"
+		]
+	},
+
+	"Add Enum Variable":{
+		"prefix": "(Editor) Add Enum Variable",
+		"body": "AddEnumVariable((${3:\"\"}), (${4:int Value}))\n",
+		"description": [
+			"TODO: add a description"
+		]
+	},
+
+	"Set Variable Alias":{
+		"prefix": "(Editor) Set Variable Alias",
+		"body": "SetVariableAlias(${3|ALIAS_VAR_PROPVAL,ALIAS_VAR_VAL0,ALIAS_VAR_VAL1,ALIAS_VAR_VAL2,ALIAS_VAR_VAL3|}, ${4:\"\"})\n",
+		"description": [
+			"TODO: add a description"
+		]
+	},
+
+	"Draw Line":{
+		"prefix": "(Editor) Draw Line",
+		"body": "DrawLine(${3:int XPos}, ${4:int YPos}, ${5:int endXPos}, ${6:int endYPos}, ${7:int Red}, ${8:int Green}, ${9:int Blue})\n",
+		"description": [
+			"Draws a line from Objects Pos to endPos",
+			"\rwith a color of Red, Green, Blue"
+		]
+	},
+
+	"Draw Arrow":{
+		"prefix": "(Editor) Draw Arrow",
+		"body": "DrawArrow(${3:int XPos}, ${4:int YPos}, ${5:int endXPos}, ${6:int endYPos}, ${7:int Red}, ${8:int Green}, ${9:int Blue})\n",
+		"description": [
+			"Draws a Arrow from Objects Pos to endPos",
+			"\rwith a color of Red, Green, Blue"
+		]
+	},
+
+	"Draw Rect World":{
+		"prefix": "(Editor) Draw Rect World",
+		"body": "DrawRectWorld(${3:int iXPos}, ${4:int iYPos}, ${5:int width}, ${6:int height}, ${7:int Red}, ${8:int Green}, ${9:int Blue}, ${10:int Alpha})\n",
+		"description": [
+			"Draws a rectangle with a size of width,height\nat ixPos and iYPos,",
+			"\rwith a color of Red, Green, Blue along Alpha"
+		]
+	},
+
+	"Draw Rect Outline":{
+		"prefix": "(Editor) Draw Rect Outline",
+		"body": "DrawRectOutline(${3:int iXPos}, ${4:int iYPos}, ${5:int width}, ${6:int height}, ${7:int Red}, ${8:int Green}, ${9:int Blue}, ${10:int Alpha})\n",
+		"description": [
+			"Draws a Outline rectangle with a size of width,height\nat ixPos and iYPos,",
+			"\rwith a color of Red, Green, Blue along Alpha"
+		]
+	},
+
+	"Get Object Type":{
+		"prefix": "(Editor) Get Object Type",
+		"body": "GetObjectType(${3:int store}, ${4:\"typeName\"})\n",
+		"description": [
+			"TODO: add a description"
 		]
 	}
 }
