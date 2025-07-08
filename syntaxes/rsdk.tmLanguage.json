@@ -7,6 +7,9 @@
 			"include": "#invalid-keywords"
 		},
 		{
+			"include": "#keywords"
+		},
+		{
 			"include": "#numbers"
 		},
 		{
@@ -52,7 +55,7 @@
 	],
 	"repository": {
 		"invalid-keywords": {
-			"match": "\\b(end|endfunction|endsub|else|endif|loop|next|case|default|endswitch|break|loop)\\b",
+			"match": "\\b(end\\s*function|end\\s*table|end\\s*sub|end\\s*event|else|end\\s*if|loop|next|case|default|end\\s*switch|break)\\b",
 			"captures": {
 				"0": {
 					"name": "invalid.illegal.stray-$1.rsdk"
@@ -134,7 +137,7 @@
 			}
 		},
 		"typename-entity": {
-			"match": "(TypeName)\\s*(\\[)\\s*(\\w*)\\s*(\\])",
+			"match": "(TypeName|SfxName|AchievementName|PlayerName|StageName)\\s*(\\[)\\s*([\\w\\s]*)\\s*(\\])",
 			"captures": {
 				"1": {
 					"name": "storage.type.typename.rsdk"
@@ -300,6 +303,36 @@
 							"include": "$base"
 						}
 					]
+				},
+				{
+					"begin": "^\\s*((\\w*)\\s*table)\\b\\s*(\\w*)",
+					"beginCaptures": {
+                        "1": {
+                            "name": "storage.type.table.definition.retroscript"
+                        },
+                        "2": {
+							"patterns": [
+								{
+									"include": "#definition-visibility"
+								}
+							],
+                            "name": "storage.type.table.visibility.retroscript"
+                        },
+                        "3": {
+                            "name": "entity.name.variable.table.retroscript"
+                        }
+					},
+					"end": "\\b(end\\s*table)\\b",
+					"endCaptures": {
+						"0": {
+							"name": "keyword.control.$1.retroscript"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$base"
+						}
+					]
 				}
 			]
 		},
@@ -308,13 +341,13 @@
 				{
 					"begin": "\\b(function)\\b",
 					"beginCaptures": {
-						"0": {
+						"1": {
 							"name": "storage.type.$1.rsdk"
 						}
 					},
-					"end": "\\b(endfunction|end function)\\b",
+					"end": "\\b(end\\s*function)\\b",
 					"endCaptures": {
-						"0": {
+						"1": {
 							"name": "storage.type.$1.rsdk"
 						}
 					},
@@ -325,32 +358,13 @@
 					]
 				},
 				{
-					"begin": "\\b(sub)\\b",
+					"begin": "\\b(sub|event)\\b",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.$1.rsdk"
 						}
 					},
-					"end": "\\b(endsub|end sub)\\b",
-					"endCaptures": {
-						"0": {
-							"name": "storage.type.$1.rsdk"
-						}
-					},
-					"patterns": [
-						{
-							"include": "$base"
-						}
-					]
-				},
-				{
-					"begin": "\\b(event)\\b",
-					"beginCaptures": {
-						"0": {
-							"name": "storage.type.$1.rsdk"
-						}
-					},
-					"end": "\\b(end event)\\b",
+					"end": "\\b(end\\s*sub|end\\s*event)\\b",
 					"endCaptures": {
 						"0": {
 							"name": "storage.type.$1.rsdk"
@@ -411,7 +425,7 @@
                     },
 					"patterns": [
 						{
-							"match": "Standard|Mobile|Use_Haptics",
+							"match": "Standard|Mobile|SW_Rendering|HW_Rendering|Use_Haptics|No_Haptics|Use_Decomp|Use_Mod_Loader|STANDARD|MOBILE|SW_RENDERING|HW_RENDERING|USE_F_FEEDBACK|NO_F_FEEDBACK|USE_DECOMP|USE_NETWORKING|USE_MOD_LOADER",
 							"name": "entity.name.function.preprocessor.rsdk"
 						},
 						{
@@ -420,7 +434,7 @@
 					]
 				},
                 {
-                    "match": "^\\s*#\\s*(endplatform)\\b",
+                    "match": "^\\s*#\\s*(end\\s*platform)\\b",
                     "captures": {
                         "0": {
                             "name": "invalid.illegal.stray-$1.rsdk"
@@ -489,7 +503,7 @@
 		"static-value-definition": {
 			"patterns": [
 				{
-					"match": "^\\s*((\\w*)\\s*value)\\b\\s*(\\w*)\\s*\\=\\s*([0-9a-zA-Z_]*)\\;",
+					"match": "^\\s*((\\w*)\\s*value)\\b\\s*(\\w*)\\s*\\=\\s*([0-9a-zA-Z_\\.\\-]*)",
 					"captures": {
                         "1": {
                             "name": "storage.type.value.definition.rsdk"
@@ -527,7 +541,7 @@
 		"alias-definition": {
 			"patterns": [
 				{
-					"match": "^\\s*((\\w*)\\s*alias)\\b\\s*([0-9a-zA-Z_]*)\\s*(\\:)\\s*([0-9a-zA-Z_]*)\\s*$",
+					"match": "^\\s*((\\w*)\\s*alias)\\b\\s*([0-9a-zA-Z_\\.\\-]*)\\s*(\\:)\\s*([0-9a-zA-Z_\\.]*)",
 					"captures": {
                         "1": {
                             "name": "storage.type.alias.definition.rsdk"
@@ -536,10 +550,6 @@
 							"patterns": [
 								{
 									"include": "#definition-visibility"
-								},
-								{
-									"match": ".*",
-									"name": "invalid.illegal"
 								}
 							],
                             "name": "storage.type.alias.visibility.rsdk"
@@ -548,10 +558,6 @@
 							"patterns": [
 								{
 									"include": "#numbers"
-								},
-								{
-									"match": ".*",
-									"name": "invalid.illegal"
 								}
 							]
                         },
@@ -563,10 +569,6 @@
 								{
 									"match": "\\w*",
 									"name": "entity.name.type.constant.rsdk"
-								},
-								{
-									"match": ".*",
-									"name": "invalid.illegal"
 								}
 							]
                         }
@@ -579,7 +581,7 @@
 			"name": "storage.type.visibility.rsdk"
 		},
         "function-call": {
-            "begin": "(?x)\n(?!(?:if|else|endif|while|loop|foreach|next|switch|case|default|break|endswitch|function|endfunction|sub|endsub)\\s*\\()\n(?=\n(?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(\n)",
+            "begin": "(?x)\n(?!(?:if|else|end\\s*if|while|loop|foreach|next|switch|case|default|break|end\\s*switch|function|end\\s*function|sub|end\\s*sub|event|end\\s*event)\\s*\\()\n(?=\n(?:[A-Za-z0-9_][A-Za-z0-9_]*+|::)++\\s*\\(  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(\n)",
             "end": "(?<=\\))(?!\\w)",
             "name": "meta.function-call.rsdk",
             "patterns": [
@@ -599,11 +601,14 @@
                 {
                     "include": "#numbers"
                 },
+				{
+                    "include": "#keywords"
+                },
                 {
                     "include": "#operators"
                 },
                 {
-                    "begin": "(?x)\n(?!(?:if|else|endif|while|loop|foreach|next|switch|case|default|break|endswitch|function|endfunction|sub|endsub)\\s*\\()\n(\n(?:[A-Za-z_][A-Za-z0-9_]*+|::)++  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\n)\n\\s*(\\()",
+                    "begin": "(?x)\n(?!(?:if|else|end\\s*if|while|loop|foreach|next|switch|case|default|break|end\\s*switch|end\\s*table|function|end\\s*function|sub|end\\s*sub|event|end\\s*event)\\s*\\()\n(\n(?:[A-Za-z0-9_][A-Za-z0-9_]*+|::)++  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\n)\n\\s*(\\()",
                     "beginCaptures": {
                         "1": {
                             "name": "entity.name.function.rsdk"
