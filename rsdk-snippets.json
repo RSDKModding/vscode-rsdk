@@ -1112,6 +1112,26 @@
 		]
 	},
 
+	"v2 Set Water Color":{
+		"prefix": "(v2) Set Water Color",
+		"body": "SetWaterColor(${3:int Red}, ${4:int Green}, ${5:int Blue}, ${6:int alpha})\n",
+		"description": [
+			"Sets the water color for the level"
+		]
+	},
+	
+	"v2 Set Fade":{
+		"prefix": "(v2) Set Fade",
+		"body": "SetFade(${3:int Red}, ${4:int Green}, ${5:int Blue}, ${6:int blendAmount}, ${7:int startIndex}, ${8:int endIndex})\n",
+		"description": [
+			"Blends the currently active palette with",
+			"\rRed, Green and Blue by blendAmount,",
+			"\rand stores it in the active palette bank,",
+			"\rstarting at palIndex and",
+			"\rcontinuing through to endIndex"
+		]
+	},
+
 	"v3 Set Palette Fade":{
 		"prefix": "(v3) Set Palette Fade",
 		"body": "SetPaletteFade(${3:int destPalBankID}, ${4:int Red}, ${5:int Green}, ${6:int Blue}, ${7:int blendAmount}, ${8:int startIndex}, ${9:int endIndex})\n",
