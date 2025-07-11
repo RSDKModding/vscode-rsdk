@@ -334,6 +334,18 @@
 		"description": "Add alias in script for usage in FaceBuffer.Flag"
 	},
 
+	"Add v3 deformation layer aliases":{
+		"prefix": "(v3) SetLayerDeformation aliases",
+		"body": [
+			"// Deformation Layer Aliases",
+			"#alias 0 : DEFORM_FG",
+			"#alias 1 : DEFORM_FG_WATER",
+			"#alias 2 : DEFORM_BG",
+			"#alias 3 : DEFORM_BG_WATER\n"
+		],
+		"description": "Add alias in script for usage with SetLayerDeformation"
+	},
+
 	"Add v3 collision side aliases":{
 		"prefix": "(v3) CSIDE aliases",
 		"body": [
@@ -425,6 +437,18 @@
 			"#alias  2 : ECEFFECT_BOXCOL3"
 		],
 		"description": "Add alias in script for Entity Collision"
+	},
+
+	"Add v4 deformation layer aliases":{
+		"prefix": "(v4) SetLayerDeformation aliases",
+		"body": [
+			"// Deformation Layer Aliases",
+			"private alias 0 : DEFORM_FG",
+			"private alias 1 : DEFORM_FG_WATER",
+			"private alias 2 : DEFORM_BG",
+			"private alias 3 : DEFORM_BG_WATER\n"
+		],
+		"description": "Add alias in script for usage with SetLayerDeformation"
 	},
 
 	"Add v4 tile info aliases":{
@@ -1112,11 +1136,36 @@
 		]
 	},
 
+	"v2 Load Player Animation":{
+		"prefix": "(v2) Load Player Animation",
+		"body": " LoadPlayerAnimation(\"${3:string filePath}\", ${4:int playerID})\n",
+		"description": [
+			"Loads player animation form `filePath` if the player",
+			"is playerID is the same as on the playerList"
+		]
+	},
+
 	"v2 Set Water Color":{
 		"prefix": "(v2) Set Water Color",
 		"body": "SetWaterColor(${3:int Red}, ${4:int Green}, ${5:int Blue}, ${6:int alpha})\n",
 		"description": [
 			"Sets the water color for the level"
+		]
+	},
+
+	"v2 Set Blend Table":{
+		"prefix": "(v2) Set Blend Table",
+		"body": "SetBlendTable(${3:int alpha}, ${4:int Red}, ${5:int Green}, ${6:int Blue})\n",
+		"description": [
+			"TODO: add a description"
+		]
+	},
+
+	"v2 Set Tint Table":{
+		"prefix": "(v2) Set Tint Table",
+		"body": "SetTintTable(${3:int Alpha}, ${4:int Unk}, ${5:int Type}, ${6:int a4}, ${7:int a5}, ${8:int tableID})\n",
+		"description": [
+			"TODO: add a description"
 		]
 	},
 	
@@ -1126,7 +1175,7 @@
 		"description": [
 			"Blends the currently active palette with",
 			"\rRed, Green and Blue by blendAmount,",
-			"\rand stores it in the active palette bank,",
+			"\rand stores it in destPalBankID,",
 			"\rstarting at palIndex and",
 			"\rcontinuing through to endIndex"
 		]
@@ -1727,7 +1776,7 @@
 
 	"Add Editor Variable":{
 		"prefix": "(Editor) Add Editor Variable",
-		"body": "AddEditorVariable(${3:\"\"})\n",
+		"body": "AddEditorVariable(\"${3:string text}\")\n",
 		"description": [
 			"TODO: add a description"
 		]
@@ -1735,7 +1784,7 @@
 
 	"Set Active Variable":{
 		"prefix": "(Editor) Set Active Variable",
-		"body": "SetActiveVariable(${3:\"\"})\n",
+		"body": "SetActiveVariable(\"${3:string text}\")\n",
 		"description": [
 			"TODO: add a description"
 		]
@@ -1743,7 +1792,7 @@
 
 	"Add Enum Variable":{
 		"prefix": "(Editor) Add Enum Variable",
-		"body": "AddEnumVariable((${3:\"\"}), (${4:int Value}))\n",
+		"body": "AddEnumVariable((\"${3:string text}\"), (${4:int Value}))\n",
 		"description": [
 			"TODO: add a description"
 		]
@@ -1751,7 +1800,7 @@
 
 	"Set Variable Alias":{
 		"prefix": "(Editor) Set Variable Alias",
-		"body": "SetVariableAlias(${3|ALIAS_VAR_PROPVAL,ALIAS_VAR_VAL0,ALIAS_VAR_VAL1,ALIAS_VAR_VAL2,ALIAS_VAR_VAL3|}, ${4:\"\"})\n",
+		"body": "SetVariableAlias(${3|ALIAS_VAR_PROPVAL,ALIAS_VAR_VAL0,ALIAS_VAR_VAL1,ALIAS_VAR_VAL2,ALIAS_VAR_VAL3|}, \"${4:string text}\")\n",
 		"description": [
 			"TODO: add a description"
 		]
@@ -1795,7 +1844,7 @@
 
 	"Get Object Type":{
 		"prefix": "(Editor) Get Object Type",
-		"body": "GetObjectType(${3:int store}, ${4:\"typeName\"})\n",
+		"body": "GetObjectType(${3:int store}, \"${4:string text}\")\n",
 		"description": [
 			"TODO: add a description"
 		]
