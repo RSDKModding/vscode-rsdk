@@ -657,10 +657,10 @@
 	"v3 Platform Types":{
 		"prefix": "(v3) #Platform",
 		"body": [
-			"#platform: ${3|Standard,Mobile,Use_Standalone,Use_Origins,SW_Rendering,HW_Rendering,Use_Haptics,No_Haptics,Use_Decomp|}",
+			"#platform: ${3|Standard,Mobile,Use_Standalone,Use_Origins,SW_Rendering,HW_Rendering,Use_Haptics,No_Haptics,Use_Decomp,Use_Mod_Loader|}",
 			"\t$0",
 			"#endplatform\n"
-			],
+		],
 		"description": [
 			"Skip over lines of code if",
 			"\rtype does not match with what",
@@ -671,7 +671,7 @@
 	"v4 Platform Types":{
 		"prefix": "(v4) #Platform",
 		"body": [
-			"#platform: ${4|STANDARD,MOBILE,USE_STANDALONE,USE_ORIGINS,SW_RENDERING,HW_RENDERING,USE_F_FEEDBACK,NO_F_FEEDBACK,USE_NETWORKING,USE_DECOMP|}",
+			"#platform: ${4|STANDARD,MOBILE,USE_STANDALONE,USE_ORIGINS,SW_RENDERING,HW_RENDERING,USE_F_FEEDBACK,NO_F_FEEDBACK,USE_NETWORKING,USE_DECOMP,USE_MOD_LOADER|}",
 			"\t$0",
 			"#endplatform\n"
 		],
