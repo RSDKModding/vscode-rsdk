@@ -3,7 +3,7 @@
 		"prefix": "v2 Setup",
 		"body": [
 			"// ========================",
-			"// RSDK Project ${3|Sonic Nexus,Custom v2 Project|}",
+			"// RSDK Project: ${3|Sonic Nexus,Custom v2 Project|}",
 			"// Script Name: $TM_FILENAME_BASE",
 			"// Script Author: ${4:Script Author}",
 			"// ========================",
@@ -63,7 +63,7 @@
 		"prefix": "v3 Setup",
 		"body": [
 			"// ========================",
-			"// RSDK Project ${3|Sonic CD,Custom v3 Project|}",
+			"// RSDK Project: ${3|Sonic CD,Custom v3 Project|}",
 			"// Script Name: $TM_FILENAME_BASE",
 			"// Script Author: ${4:Script Author}",
 			"// ========================",
@@ -148,7 +148,7 @@
 		"prefix": "v4 Setup",
 		"body": [
 			"// ========================",
-			"// ${3|Sonic 1,Sonic 2,Custom v4 Project|}",
+			"// RSDK Project: ${3|Sonic 1,Sonic 2,Custom v4 Project|}",
 			"// Script Name: $TM_FILENAME_BASE",
 			"// Script Author: ${4:Script Author}",
 			"// ========================",
