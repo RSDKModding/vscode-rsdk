@@ -1705,6 +1705,12 @@
 		"description": "Adds a text entry with the game's version\n\ras the text, highlighted if highlight is set"
 	},
 
+	"Call function":{
+		"prefix": "Call Function",
+		"body": "CallFunction(${3:int function})\n",
+		"description": "Calls the given object function"
+	},
+
 	"Send engine callback":{
 		"prefix": "(v3) Engine Callback",
 		"body": "EngineCallback(${3:int callbackFuncID})\n",
