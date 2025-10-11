@@ -425,7 +425,7 @@
                     },
 					"patterns": [
 						{
-							"match": "Standard|Mobile|SW_Rendering|HW_Rendering|Use_Haptics|No_Haptics|Use_Decomp|Use_Mod_Loader|STANDARD|MOBILE|SW_RENDERING|HW_RENDERING|USE_F_FEEDBACK|NO_F_FEEDBACK|USE_DECOMP|USE_NETWORKING|USE_MOD_LOADER",
+							"match": "Standard|Mobile|SW_Rendering|HW_Rendering|Use_Haptics|No_Haptics|Use_Decomp|Use_Mod_Loader|Editor|STANDARD|MOBILE|SW_RENDERING|HW_RENDERING|USE_F_FEEDBACK|NO_F_FEEDBACK|USE_DECOMP|USE_NETWORKING|USE_MOD_LOADER|EDITOR",
 							"name": "entity.name.function.preprocessor.rsdk"
 						},
 						{
