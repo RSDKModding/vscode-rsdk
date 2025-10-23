@@ -793,6 +793,12 @@
 		]
 	},
 
+	"Type name":{
+		"prefix": "Type name",
+		"body": "TypeName[${3:objectName}]\n",
+		"description": "Use this to get the ID of an Object based on it’s name."
+	},
+
 	"Play music":{
 		"prefix": "Play Music",
 		"body": "PlayMusic(${3:int trackID})\n",
