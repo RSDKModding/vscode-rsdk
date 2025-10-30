@@ -1804,7 +1804,7 @@
 
 	"Add Enum Variable":{
 		"prefix": "(Editor) Add Enum Variable",
-		"body": "AddEnumVariable((\"${3:string text}\"), (${4:int Value}))\n",
+		"body": "AddEnumVariable(\"${3:string text}\", ${4:int Value})\n",
 		"description": [
 			"TODO: add a description"
 		]
