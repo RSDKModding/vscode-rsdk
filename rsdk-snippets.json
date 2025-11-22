@@ -795,8 +795,14 @@
 
 	"Type name":{
 		"prefix": "Type name",
-		"body": "TypeName[${3:objectName}]\n",
+		"body": "TypeName[${3:objectName}]",
 		"description": "Use this to get the ID of an Object based on it’s name."
+	},
+
+	"Sfx name":{
+		"prefix": "Sfx name",
+		"body": "SfxName[${3:sfxName}]",
+		"description": "Use this to play a sound effect based on it’s name."
 	},
 
 	"Play music":{
