@@ -1478,6 +1478,12 @@
 		"description": "Check if there was a touch input between\n\rthe inputted coordinates"
 	},
 
+	"Flip Sign":{
+		"prefix": "FlipSign-MathFunc",
+		"body": "FlipSign(${3:var variable})\n",
+		"description": "Flips the sign of the given variable; positive values will become negative values, and vice versa."
+	},
+
 	"Sin":{
 		"prefix": "Sin-MathFunc",
 		"body": "Sin(${4:int store}, ${5:int angle})\n",
@@ -1865,6 +1871,38 @@
 		"body": "GetObjectType(${3:int store}, \"${4:string text}\")\n",
 		"description": [
 			"TODO: add a description"
+		]
+	}
+
+	"Variable Name":{
+		"prefix": "(Decomp Only) Variable Name",
+		"body": "varName[${3:Var Name}]\n",
+		"description": [
+			"Use this to get the ID of a Player based on it’s name."
+		]
+	}
+
+	"Player Name":{
+		"prefix": "(Decomp Only) Player Name",
+		"body": "PlayerName[${3:player Name}]\n",
+		"description": [
+			"Use this to get the ID of a Player based on it’s name."
+		]
+	}
+
+	"Stage Name":{
+		"prefix": "(Decomp Only) Stage Name",
+		"body": "StageName[${3|P,R,S,B|} - ${4:stage Name}]\n",
+		"description": [
+			"Use this to get the ID of a stage based on its category\n and name on the GameConfig."
+		]
+	}
+
+	"Achievement Name":{
+		"prefix": "(Decomp Only) Achievement Name",
+		"body": "AchievementName[${3:achievement Name}]\n",
+		"description": [
+			"Use this to get the ID of an Achievement based on its name."
 		]
 	}
 }
