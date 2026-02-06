@@ -397,6 +397,24 @@
 		"description": "Add alias in script for usage with Object.InkEffect"
 	},
 
+	"Add v3 engine state aliases":{
+		"prefix": "(v3) Engine state aliases",
+		"body": [
+			"// Engine State Aliases",
+			"#alias 0 : ENGINE_DEVMENU",
+			"#alias 1 : ENGINE_MAINGAME",
+			"#alias 2 : ENGINE_INITDEVMENU",
+			"#alias 3 : ENGINE_EXITGAME",
+			"#alias 4 : ENGINE_SCRIPTERROR",
+			"#alias 5 : ENGINE_ENTER_HIRESMODE",
+			"#alias 6 : ENGINE_EXIT_HIRESMODE",
+			"#alias 7 : ENGINE_PAUSE",
+			"#alias 8 : ENGINE_WAIT",
+			"#alias 9 : ENGINE_VIDEOWAIT\n"
+		],
+		"description": "Add alias in script for usage with engine.state"
+	},
+
 	"Add v3 misc aliases":{
 		"prefix": "(v3) Misc aliases",
 		"body": [
