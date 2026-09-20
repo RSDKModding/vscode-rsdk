@@ -1496,6 +1496,12 @@
 		"description": "Check if there was a touch input between\n\rthe inputted coordinates"
 	},
 
+	"Check Camera Proximity":{
+		"prefix": "(v4) Check Camera Proximity",
+		"body": "CheckCameraProximity(${3:int ixpos}, ${4:int iypos}, ${5:int xrange}, ${6:int yrange})\n",
+		"description": "Checks if the given position is\n\rwithin range of the camera(s)."
+	},
+
 	"Flip Sign":{
 		"prefix": "FlipSign-MathFunc",
 		"body": "FlipSign(${3:var variable})\n",
