@@ -1896,7 +1896,7 @@
 		"description": [
 			"TODO: add a description"
 		]
-	}
+	},
 
 	"Variable Name":{
 		"prefix": "(Decomp Only) Variable Name",
@@ -1904,7 +1904,7 @@
 		"description": [
 			"Use this to get the ID of a Player based on it’s name."
 		]
-	}
+	},
 
 	"Player Name":{
 		"prefix": "(Decomp Only) Player Name",
@@ -1912,7 +1912,7 @@
 		"description": [
 			"Use this to get the ID of a Player based on it’s name."
 		]
-	}
+	},
 
 	"Stage Name":{
 		"prefix": "(Decomp Only) Stage Name",
@@ -1920,7 +1920,7 @@
 		"description": [
 			"Use this to get the ID of a stage based on its category\n and name on the GameConfig."
 		]
-	}
+	},
 
 	"Achievement Name":{
 		"prefix": "(Decomp Only) Achievement Name",
